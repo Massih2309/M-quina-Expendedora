@@ -1,0 +1,105 @@
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Máquina Expendedora.exe.config
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Máquina Expendedora.exe
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Máquina Expendedora.pdb
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\Máquina Expendedora.csproj.AssemblyReference.cache
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\Máquina_Expendedora.Form1.resources
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\Máquina_Expendedora.Properties.Resources.resources
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\Máquina Expendedora.csproj.GenerateResource.cache
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\Máquina Expendedora.csproj.CoreCompileInputs.cache
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\Máquina Expendedora.exe
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\Máquina Expendedora.pdb
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\Máquina Expendedora.exe.config
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Azure.Core.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Azure.Identity.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\EntityFramework.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Bcl.Cryptography.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Bcl.TimeProvider.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Options.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Identity.Client.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Logging.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Protocols.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Tokens.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Buffers.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.ClientModel.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Data.SqlClient.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.IO.FileSystem.AccessControl.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Memory.Data.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Memory.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Security.AccessControl.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Security.Cryptography.Pkcs.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Text.Json.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Threading.Channels.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Azure.Core.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Azure.Identity.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\EntityFramework.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Bcl.Cryptography.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Bcl.TimeProvider.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Data.SqlClient.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Options.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Identity.Client.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.Identity.Client.Extensions.Msal.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Abstractions.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Logging.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Buffers.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.ClientModel.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Data.SqlClient.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Memory.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Memory.Data.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Security.AccessControl.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Text.Json.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Threading.Channels.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\cs\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\pl\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\tr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\bin\Debug\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\Máquina Expendedora.csproj.SuggestedBindingRedirects.cache
+C:\Users\DELL-7480\source\repos\Máquina Expendedora\Máquina Expendedora\obj\Debug\M_quina .CDDFF5CD.Up2Date
