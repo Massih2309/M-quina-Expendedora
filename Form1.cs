@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -46,65 +46,68 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb1.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+            
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         // BOTONES NUMÉRICOS
         private void btn1_Click(object sender, EventArgs e)
         {
-            dineroIngresado = dineroIngresado * 10 + 1;
-            lblMonto.Text = "$" + dineroIngresado.ToString("0.00");
-        }
-
-        private void btn2_Click(object sender, EventArgs e)
-        {
-            dineroIngresado = dineroIngresado * 10 + 2;
-            lblMonto.Text = "$" + dineroIngresado.ToString("0.00");
-        }
-
-        private void btn3_Click(object sender, EventArgs e)
-        {
-            dineroIngresado = dineroIngresado * 10 + 3;
-            lblMonto.Text = "$" + dineroIngresado.ToString("0.00");
-        }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            if (dineroIngresado >= precioProducto)
-            {
-                decimal sobrante = dineroIngresado - precioProducto;
-                lblSobrante.Text = "$" + sobrante.ToString("0.00");
-            }
-            else
-            {
-                MessageBox.Show("Dinero insuficiente");
-            }
-        }
-
-        private void btnComprar_Click(object sender, EventArgs e)
-        {
+            // Verifica si se ha seleccionado un producto
             if (productoSeleccionadoId == 0)
             {
-                MessageBox.Show("Seleccione un producto");
+                MessageBox.Show("Seleccione un producto.");
                 return;
             }
 
+            // Verifica si el producto está agotado (si lblEstado muestra "Producto agotado")
+            if (lblEstado.Text == "Producto agotado")
+            {
+                MessageBox.Show("Este producto está agotado.");
+                return;
+            }
+
+            // Verifica si el dinero ingresado es suficiente para la compra
             if (dineroIngresado < precioProducto)
             {
-                MessageBox.Show("Dinero insuficiente");
+                MessageBox.Show("Dinero insuficiente.");
                 return;
             }
 
+            // Verifica que el campo de cantidad no esté vacío y que sea un número válido
+            if (string.IsNullOrEmpty(txtCantidad.Text) || !int.TryParse(txtCantidad.Text, out int cantidad) || cantidad <= 0)
+            {
+                MessageBox.Show("Por favor ingrese una cantidad válida.");
+                return;
+            }
+
+            // Calcula el total de la compra (precio * cantidad seleccionada)
+            decimal totalCompra = precioProducto * cantidad;
+
+            // Verifica si la cantidad de productos es suficiente
+            if (dineroIngresado < totalCompra)
+            {
+                MessageBox.Show("Dinero insuficiente para la cantidad seleccionada.");
+                return;
+            }
+
+            // Calcula el sobrante
+            decimal sobrante = dineroIngresado - totalCompra;
+            lblSobrante.Text = "$" + sobrante.ToString("0.00");
+
+            // Muestra el ProgressBar mientras procesa la compra
             pbProducto.Value = 0;
             pbProducto.Visible = true;
             lblProcesando.Visible = true;
 
             Timer timer = new Timer();
-            timer.Interval = 50;
+            timer.Interval = 50;  // Ajusta la velocidad de la animación
 
             timer.Tick += (s, ev) =>
             {
-                pbProducto.Value += 5;
+                pbProducto.Value += 10;
 
+                // Si el ProgressBar llega al 100%, finaliza el proceso de compra
                 if (pbProducto.Value >= 100)
                 {
                     timer.Stop();
@@ -112,23 +115,45 @@ namespace Máquina_Expendedora
                     pbProducto.Visible = false;
                     lblProcesando.Visible = false;
 
-                    // Llamamos al método para actualizar la cantidad
-                    ActualizarCantidadEnBD();
+                    // Realiza la compra en la base de datos y actualiza la cantidad de producto
+                    ActualizarCantidadProducto(cantidad);
 
-                    // Refrescamos el DataGridView
-                    CargarProductos();
+                    // Muestra un mensaje de éxito
+                    MessageBox.Show("Compra realizada. Producto(s) entregado(s).");
 
-                    MessageBox.Show("Producto entregado");
-
+                    // Resetea el monto ingresado y la cantidad
                     dineroIngresado = 0;
-                    montoTexto = "";
-                    lblMonto.Text = "0.00";
-                    lblSobrante.Text = "0.00";
+                    lblMonto.Text = "$0.00";
+                    txtCantidad.Text = "";  // Resetea el TextBox de cantidad
                 }
             };
+        
 
-            timer.Start();
+             timer.Start();
         }
+
+        private void ActualizarCantidadProducto(int cantidadComprada)
+        {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                con.Open();
+
+                // Consulta para reducir la cantidad en la base de datos
+                string query = "UPDATE Productos_ SET Cantidad = Cantidad - @Cantidad WHERE Id = @Id";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Cantidad", cantidadComprada);
+                cmd.Parameters.AddWithValue("@Id", productoSeleccionadoId);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            // Recarga los productos para reflejar los cambios en el DataGridView
+            CargarProductos();
+        }
+
+
+
 
         private void pb2_Click(object sender, EventArgs e)
         {
@@ -137,6 +162,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb2.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb3_Click(object sender, EventArgs e)
@@ -146,6 +173,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb3.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb4_Click(object sender, EventArgs e)
@@ -155,6 +184,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb4.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb5_Click(object sender, EventArgs e)
@@ -164,6 +195,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb5.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb6_Click(object sender, EventArgs e)
@@ -173,6 +206,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb6.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb7_Click(object sender, EventArgs e)
@@ -182,6 +217,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb7.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb8_Click(object sender, EventArgs e)
@@ -191,6 +228,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb8.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb9_Click(object sender, EventArgs e)
@@ -200,6 +239,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb9.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb10_Click(object sender, EventArgs e)
@@ -209,6 +250,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb10.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb11_Click(object sender, EventArgs e)
@@ -218,6 +261,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb11.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void pb12_Click(object sender, EventArgs e)
@@ -227,6 +272,8 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb12.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
+
+            ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
         private void AgregarNumero(string numero)
@@ -374,7 +421,11 @@ namespace Máquina_Expendedora
 
         private void btnC_Click(object sender, EventArgs e)
         {
+            montoTexto = ""; // Reinicia el texto del monto
 
+            dineroIngresado = 0; // Reinicia el valor de dineroIngresado
+
+            lblMonto.Text = "0.00";
         }
 
         private void ActualizarCantidadEnBD()
@@ -399,5 +450,118 @@ namespace Máquina_Expendedora
             }
         }
 
+        private void ActualizarEstadoProducto(int productoId)
+        {
+            using (SqlConnection con = new SqlConnection(conexion))
+            {
+                con.Open();
+
+                // Consulta para obtener la cantidad del producto seleccionado
+                string query = "SELECT Cantidad FROM Productos_ WHERE Id = @Id";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Id", productoId);
+
+                object result = cmd.ExecuteScalar();
+
+                // Si la cantidad es nula o menor que 1, se considera agotado
+                if (result == null || Convert.ToInt32(result) <= 0)
+                {
+                    panelEstado.BackColor = Color.Red; // Cambia el panel a rojo
+                    lblEstado.Text = "Producto agotado"; // Muestra "Producto agotado"
+                }
+                else
+                {
+                    panelEstado.BackColor = Color.Green; // Cambia el panel a verde
+                    lblEstado.Text = "Disponible"; // Muestra "Disponible"
+                }
+            }
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+            if (productoSeleccionadoId == 0)
+            {
+                MessageBox.Show("Seleccione un producto.");
+                return;
+            }
+
+            // Verifica si el producto está agotado (si lblEstado muestra "Producto agotado")
+            if (lblEstado.Text == "Producto agotado")
+            {
+                MessageBox.Show("Este producto está agotado.");
+                return;
+            }
+
+            // Verifica si el dinero ingresado es suficiente para la compra
+            if (dineroIngresado < precioProducto)
+            {
+                MessageBox.Show("Dinero insuficiente.");
+                return;
+            }
+
+            // Verifica que el campo de cantidad no esté vacío y que sea un número válido
+            if (string.IsNullOrEmpty(txtCantidad.Text) || !int.TryParse(txtCantidad.Text, out int cantidad) || cantidad <= 0)
+            {
+                MessageBox.Show("Por favor ingrese una cantidad válida.");
+                return;
+            }
+
+            // Calcula el total de la compra (precio * cantidad seleccionada)
+            decimal totalCompra = precioProducto * cantidad;
+
+            // Verifica si la cantidad de productos es suficiente
+            if (dineroIngresado < totalCompra)
+            {
+                MessageBox.Show("Dinero insuficiente para la cantidad seleccionada.");
+                return;
+            }
+
+            // Solo muestra el sobrante si hay una diferencia
+            decimal sobrante = dineroIngresado - totalCompra;
+
+            if (sobrante > 0)
+            {
+                lblSobrante.Text = "$" + sobrante.ToString("0.00");
+            }
+            else
+            {
+                lblSobrante.Text = "$0.00"; // Si no hay sobrante, muestra 0.00
+            }
+
+            // Muestra el ProgressBar mientras procesa la compra
+            pbProducto.Value = 0;
+            pbProducto.Visible = true;
+            lblProcesando.Visible = true;
+
+            Timer timer = new Timer();
+            timer.Interval = 50;  // Ajusta la velocidad de la animación
+
+            timer.Tick += (s, ev) =>
+            {
+                pbProducto.Value += 10;
+
+                // Si el ProgressBar llega al 100%, finaliza el proceso de compra
+                if (pbProducto.Value >= 100)
+                {
+                    timer.Stop();
+
+                    pbProducto.Visible = false;
+                    lblProcesando.Visible = false;
+
+                    // Realiza la compra en la base de datos y actualiza la cantidad de producto
+                    ActualizarCantidadProducto(cantidad);
+
+                    // Muestra un mensaje de éxito
+                    MessageBox.Show("Compra realizada. Producto(s) entregado(s).");
+
+                    // Resetea el monto ingresado y la cantidad
+                    dineroIngresado = 0;
+                    lblMonto.Text = "$0.00";
+                    txtCantidad.Text = "";  // Resetea el TextBox de cantidad
+                }
+            };
+
+            timer.Start();
+        }
     }
 }
