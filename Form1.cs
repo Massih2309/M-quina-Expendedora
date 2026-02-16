@@ -46,7 +46,7 @@ namespace Máquina_Expendedora
 
             pbSeleccionado.Image = pb1.Image;
             lblPrecio.Text = "$" + precioProducto.ToString("0.00");
-            
+
             ActualizarEstadoProducto(productoSeleccionadoId);
         }
 
@@ -127,30 +127,35 @@ namespace Máquina_Expendedora
                     txtCantidad.Text = "";  // Resetea el TextBox de cantidad
                 }
             };
-        
 
-             timer.Start();
+
+            timer.Start();
         }
 
-        private void ActualizarCantidadProducto(int cantidadComprada)
+        private void ActualizarCantidadProducto(int cantidad)
         {
             using (SqlConnection con = new SqlConnection(conexion))
             {
                 con.Open();
 
-                // Consulta para reducir la cantidad en la base de datos
-                string query = "UPDATE Productos_ SET Cantidad = Cantidad - @Cantidad WHERE Id = @Id";
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE Productos_ SET Cantidad = Cantidad - @Cantidad WHERE Id = @Id AND Cantidad >= @Cantidad",
+                    con);
 
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@Cantidad", cantidadComprada);
+                cmd.Parameters.AddWithValue("@Cantidad", cantidad);
                 cmd.Parameters.AddWithValue("@Id", productoSeleccionadoId);
 
-                cmd.ExecuteNonQuery();
+                int filas = cmd.ExecuteNonQuery();
+
+                if (filas == 0)
+                {
+                    MessageBox.Show("No hay suficiente stock.");
+                }
             }
 
-            // Recarga los productos para reflejar los cambios en el DataGridView
             CargarProductos();
         }
+
 
 
 
@@ -450,32 +455,33 @@ namespace Máquina_Expendedora
             }
         }
 
-        private void ActualizarEstadoProducto(int productoId)
+        private void ActualizarEstadoProducto(int id)
         {
             using (SqlConnection con = new SqlConnection(conexion))
             {
                 con.Open();
 
-                // Consulta para obtener la cantidad del producto seleccionado
-                string query = "SELECT Cantidad FROM Productos_ WHERE Id = @Id";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.Parameters.AddWithValue("@Id", productoId);
+                SqlCommand cmd = new SqlCommand(
+                    "SELECT Cantidad FROM Productos_ WHERE Id = @Id",
+                    con);
+
+                cmd.Parameters.AddWithValue("@Id", id);
 
                 object result = cmd.ExecuteScalar();
 
-                // Si la cantidad es nula o menor que 1, se considera agotado
                 if (result == null || Convert.ToInt32(result) <= 0)
                 {
-                    panelEstado.BackColor = Color.Red; // Cambia el panel a rojo
-                    lblEstado.Text = "Producto agotado"; // Muestra "Producto agotado"
+                    panelEstado.BackColor = Color.Red;
+                    lblEstado.Text = "Producto agotado";
                 }
                 else
                 {
-                    panelEstado.BackColor = Color.Green; // Cambia el panel a verde
-                    lblEstado.Text = "Disponible"; // Muestra "Disponible"
+                    panelEstado.BackColor = Color.Green;
+                    lblEstado.Text = "Producto disponible";
                 }
             }
         }
+
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
